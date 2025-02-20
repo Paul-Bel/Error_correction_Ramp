@@ -18,11 +18,14 @@ export function useCustomFetch() {
 
         if (cacheResponse) {
           const data = JSON.parse(cacheResponse)
+          console.log('cacheData', data)
           return data as Promise<TData>
         }
 
         const result = await fakeFetch<TData>(endpoint, params)
         cache?.current.set(cacheKey, JSON.stringify(result))
+        console.log('cacheResalt', result)
+
         return result
       }),
     [cache, wrappedRequest]

@@ -34,7 +34,7 @@ export function fakeFetch<TData, TParams extends object = object>(
 
         case "paginatedTransactions":
           result = getTransactionsPaginated(params as PaginatedRequestParams) as unknown as TData
-
+         
           setTimeout(() => {
             mockApiLogger({ data: { endpoint, params, result } })
             resolve(result)
