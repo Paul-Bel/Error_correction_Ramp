@@ -8,7 +8,7 @@ export const TransactionPane: TransactionPaneComponent = ({
   setTransactionApproval: consumerSetTransactionApproval,
 }) => {
   const { clearCache } = useCustomFetch()
-console.log(222222)
+
   return (
     <div className="RampPane">
       <div className="RampPane--content">

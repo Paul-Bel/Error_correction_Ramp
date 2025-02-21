@@ -26,8 +26,8 @@ export function App() {
     
     await employeeUtils.fetchAll()
     await paginatedTransactionsUtils.fetchAll()
-    setIsLoading(false)
     
+    setIsLoading(false)
   }, [employeeUtils, paginatedTransactionsUtils, transactionsByEmployeeUtils])
 
   const loadTransactionsByEmployee = useCallback(
@@ -80,9 +80,7 @@ export function App() {
         <div className="RampBreak--l" />
 
         <div className="RampGrid">
-          <Transactions 
-          transactions={transactions} 
-          disabledButton={paginatedTransactionsUtils.loading || !paginatedTransactions}/>
+          <Transactions transactions={transactions} />
 
           {transactions !== null &&  paginatedTransactions && (
             <button

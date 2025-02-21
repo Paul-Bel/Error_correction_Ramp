@@ -18,7 +18,7 @@ export function useCustomFetch() {
     
         if (cacheResponse) {
           const data = JSON.parse(cacheResponse)
-          console.log('cacheData', data)
+     
           return data as Promise<TData>
         }
 
