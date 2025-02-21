@@ -15,7 +15,7 @@ export function useCustomFetch() {
       wrappedRequest<TData>(async () => {
         const cacheKey = getCacheKey(endpoint, params)
         const cacheResponse = cache?.current.get(cacheKey)
-
+    
         if (cacheResponse) {
           const data = JSON.parse(cacheResponse)
           console.log('cacheData', data)
@@ -24,7 +24,6 @@ export function useCustomFetch() {
 
         const result = await fakeFetch<TData>(endpoint, params)
         cache?.current.set(cacheKey, JSON.stringify(result))
-        console.log('cacheResalt', result)
 
         return result
       }),
